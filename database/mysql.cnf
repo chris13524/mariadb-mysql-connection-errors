@@ -1,0 +1,7 @@
+[mysqld]
+
+# Setting this flag to ON will prevent data corruption in the event of a power failure (it writes to two files instead of one). But since we're using ZFS, we don't need this and can use the performance benefits.
+# see: http://mysql.localhost.net.ar/tech-resources/articles/mysql-zfs.html
+# see: https://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html#sysvar_innodb_doublewrite
+innodb_doublewrite = OFF
+innodb_print_all_deadlocks = ON

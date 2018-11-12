@@ -1,0 +1,16 @@
+version: '2'
+services:
+
+  database:
+    restart: unless-stopped
+    build:
+      context: database
+    volumes:
+      - ./thedatabase:/var/lib/mysql/
+#    ports:
+#      - "127.0.0.1:3306:3306" # allow connection via SSH tunnel
+
+  killbill:
+    restart: unless-stopped
+    build:
+      context: killbill
